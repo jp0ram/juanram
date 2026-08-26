@@ -1,0 +1,370 @@
+/* Base Styles & Typography */
+:root {
+    --bg-light: #f5f4f0;
+    --bg-darker: #e9e8e3;
+    --text-primary: #3b4d44;
+    --text-secondary: #666;
+    --border-color: #ccc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: normal;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Typography Utilities */
+.small-caps {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%; 
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-light);
+}
+
+.logo {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: normal;
+    color: var(--text-primary);
+    font-size: 2rem; 
+}
+
+.logo-line {
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 1.1rem; 
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Buttons */
+.btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--text-primary);
+    border-radius: 30px;
+    font-size: 1rem;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-light);
+}
+
+.btn-solid {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4a6355;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-solid:hover {
+    background-color: #3b4d44;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 5%;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+}
+
+.hero-right {
+    flex: 1.5;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.hero-right p {
+    font-size: 1.5rem; 
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    gap: 20px;
+    padding: 0 5% 100px 5%;
+    overflow: hidden;
+}
+
+.gallery-item {
+    flex: 1;
+    height: 450px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item:nth-child(even) {
+    margin-top: 40px;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    padding: 100px 5%;
+    gap: 60px;
+}
+
+.about-title {
+    flex: 1;
+}
+
+.about-title h2 {
+    font-size: 3.5rem;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin-top: 40px;
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1.5;
+}
+
+.about-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+/* Services Section */
+.services {
+    background-color: var(--bg-darker);
+    padding: 100px 5%;
+}
+
+.services-header h2 {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+}
+
+.services-container {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+}
+
+.services-grid-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.service-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.service-item hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    padding: 100px 5%;
+    gap: 60px;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+}
+
+.contact-text h3 {
+    font-size: 2rem;
+    margin-top: 15px;
+}
+
+.contact-form-container {
+    flex: 1.5;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-darker);
+    padding: 80px 5% 30px 5%;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-brand h2 {
+    font-size: 2.8rem;
+    margin-top: 80px;
+}
+
+.footer-info {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    border-left: 1px solid var(--text-primary);
+    padding-left: 50px;
+    margin-top: 80px;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--text-primary);
+    color: var(--bg-light);
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 80px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    font-size: 1.05rem;
+    text-decoration: underline;
+    line-height: 1.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero, .about, .services-container, .contact, .footer-top {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .hero-right, .about-content {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .gallery {
+        flex-wrap: wrap;
+    }
+    .gallery-item {
+        min-width: 45%;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-info {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    .footer-links {
+        margin-top: 40px;
+    }
+}
