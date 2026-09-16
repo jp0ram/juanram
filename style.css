@@ -135,7 +135,7 @@ header {
 .gallery {
     display: flex;
     gap: 20px;
-    padding: 30 max(5%, calc((100% - 1300px) / 2)) 80px max(5%, calc((100% - 1300px) / 2));
+    padding: 0 max(5%, calc((100% - 1300px) / 2)) 80px max(5%, calc((100% - 1300px) / 2));
     overflow: hidden;
 }
 
