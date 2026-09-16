@@ -25,25 +25,24 @@
     <section class="about">
         <div class="about-title" style="padding-top: 40px;">
             <h2>About Me</h2>
-            <img src="mx.jpeg" alt="Me in CDMX" class="about-image">
+            <img src="images/mx.jpeg" alt="Me in CDMX" class="about-image hidden-swoosh">
         </div>
-        <div class="about-content">
-            <br><br><br><br><br><br><br>
+        <div class="about-content" style="padding-top: 168px;">
             <p>Born in El Paso, TX, I was always interested in the sky and everything that can get to it. 
                 With the rich aerospace history in the region I decided to pursue my studies at New Mexico State University, where I made connections with like-minded people. 
                 In the process to get there, I developed strong interests in mathematics and physics, with distinctions and achievements tracing back to high school. 
                 Through hard work and dedication, I have built a vast library of knowledge and tools to improve and assist the needs of the industry.</p>
             <br>
             <p>New Mexico State has also helped me interact with my community through service as a mentor and tutor.
-                Over three years working in TRIO STEM-H, I have become well versed in the higher education environment and in how to properly help people.
+                Over three years working in TRIO STEM-H, I have become well versed in the higher education environment and in effectively supporting others.
                 Alongside my peers and colleagues, I traversed several academic challenges to arrive where I am today.
             </p>
         </div>
     </section>
 
     <section class="about" style="padding-bottom: 80px;">
-         <div class="about-title">
-            <img src="capstone.jpg" alt="Capstone" class="about-image" >
+        <div class="about-title">
+            <img src="images/capstone.jpg" alt="Capstone" class="about-image hidden-swoosh">
         </div>
         <div class="about-content">
             <br>
@@ -52,8 +51,9 @@
                 I spent the last four and a half years familiarizing myself with the tools and processes used to create incredible systems and machines;
                 those tools allow me to develop and perfect my own inventions to the benefit of myself and those around me.
                 Even in unrelated environments, I can always find a way to project what I have learned on to the world.
-                From Lockheed Martin to professors I admire, several people have given me a chance and were impressed by my results; You can be next.
+                From Lockheed Martin to professors I admire, several people have given me a chance and were impressed by my results. I look forward to bringing this same dedication to your team.
             </p>
+        </div>
     </section>
 
     <footer>
@@ -65,11 +65,11 @@
                 <p>(915) 270-4645 <br>juanpablo001@live.com<br>El Paso, TX</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/jp0ram/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-   		        <i class="fa-brands fa-linkedin-in"></i>
-		    </a>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
                     <a href="https://github.com/jp0ram" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fa-brands fa-github"></i>
-		    </a>
+                    </a>
                 </div>
             </div>
             <div class="footer-links">
@@ -80,7 +80,21 @@
                 </ul>
             </div>
         </div>
-     </footer>
+    </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show-swoosh');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            const hiddenElements = document.querySelectorAll('.hidden-swoosh');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
 </body>
 </html>

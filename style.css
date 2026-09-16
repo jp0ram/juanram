@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-primary);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -33,20 +34,11 @@ a {
     color: inherit;
 }
 
-.small-caps {
-    display: block;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
-    color: var(--text-secondary);
-}
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 5%; 
+    padding: 30px max(5%, calc((100% - 1300px) / 2)); 
     border-bottom: 1px solid var(--border-color);
     background-color: var(--accent-blue);
 }
@@ -57,11 +49,6 @@ header {
     color: var(--text-primary);
     font-size: 2rem; 
     letter-spacing: 0.5px;
-}
-
-.logo-line {
-    color: var(--text-secondary);
-    font-weight: 300;
 }
 
 .nav-links {
@@ -114,11 +101,10 @@ header {
     background-color: #357abd;
 }
 
-/* Hero Section */
 .hero {
     display: flex;
     justify-content: space-between;
-    padding: 100px 5%;
+    padding: 100px max(5%, calc((100% - 1300px) / 2));
     align-items: center;
     gap: 60px;
 }
@@ -149,7 +135,7 @@ header {
 .gallery {
     display: flex;
     gap: 20px;
-    padding: 0 5% 80px 5%;
+    padding: 0 max(5%, calc((100% - 1300px) / 2)) 80px max(5%, calc((100% - 1300px) / 2));
     overflow: hidden;
 }
 
@@ -171,7 +157,7 @@ header {
 
 .about {
     display: flex;
-    padding: 10px 5%;
+    padding: 10px max(5%, calc((100% - 1300px) / 2));
     gap: 60px;
 }
 
@@ -204,7 +190,7 @@ header {
 
 .services {
     background-color: var(--bg-darker);
-    padding: 100px 5%;
+    padding: 100px max(5%, calc((100% - 1300px) / 2));
 }
 
 .services-header h2 {
@@ -249,7 +235,7 @@ header {
 
 .contact {
     display: flex;
-    padding: 100px 5%;
+    padding: 100px max(5%, calc((100% - 1300px) / 2));
     gap: 60px;
 }
 
@@ -277,7 +263,7 @@ header {
 
 footer {
     background-color: var(--bg-darker);
-    padding: 80px 5% 30px 5%;
+    padding: 80px max(5%, calc((100% - 1300px) / 2)) 30px max(5%, calc((100% - 1300px) / 2));
     border-top: 1px solid var(--border-color);
 }
 
@@ -342,16 +328,26 @@ footer {
     color: var(--button-blue);
 }
 
-.footer-bottom {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
-    padding-top: 30px;
-}
-
 @media (max-width: 768px) {
-    .hero, .about, .services-container, .contact, .footer-top {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 5%;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero, .about, .contact, .services {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 5%;
+    }
+    footer {
+        padding: 40px 5% 30px 5%;
+    }
+    .footer-top {
         flex-direction: column;
         gap: 40px;
     }
@@ -361,9 +357,11 @@ footer {
     }
     .gallery {
         flex-wrap: wrap;
+        padding: 0 5% 40px 5%;
     }
     .gallery-item {
-        min-width: 45%;
+        min-width: 100%;
+        height: auto;
     }
     .services-grid {
         grid-template-columns: 1fr;
@@ -371,9 +369,26 @@ footer {
     .footer-info {
         border-left: none;
         padding-left: 0;
-        margin-top: 40px;
+        margin-top: 0;
     }
     .footer-links {
-        margin-top: 40px;
+        margin-top: 0;
     }
 }
+
+/* --- Swoosh Animation Styles --- */
+.hidden-swoosh {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show-swoosh {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery .gallery-item:nth-child(1).hidden-swoosh { transition-delay: 0.1s; }
+.gallery .gallery-item:nth-child(2).hidden-swoosh { transition-delay: 0.25s; }
+.gallery .gallery-item:nth-child(3).hidden-swoosh { transition-delay: 0.4s; }
+.gallery .gallery-item:nth-child(4).hidden-swoosh { transition-delay: 0.55s; }

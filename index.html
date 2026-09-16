@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="logo">
             <a href="index.html">Juan Ramirez</a>
@@ -23,42 +22,37 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-left">
             <h1>Juan Ramirez</h1>
             <h2>Mechanical and Aerospace Engineer</h2>
         </div>
         <div class="hero-right">
-            <p>Senior mechanical and aerospace engineering student with a desire to understand and solve complex problems. Passionate and experienced in aerospace and food manufacturing.</p>
+            <p>Senior mechanical and aerospace engineering student with a desire to understand and solve complex problems. Passionate about and experienced in aerospace and food manufacturing.</p>
             <a href="portfolio.html" class="btn-outline">Explore My Work</a>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section class="gallery">
-        <div class="gallery-item"><img src="Juan.jpg" alt="Headshot"></div>
-        <div class="gallery-item"><img src="launchti6al4v10gs.png" alt="Sat Frame"></div>
-        <div class="gallery-item"><img src="aps.jpg" alt="Internship Picture"></div>
-        <div class="gallery-item"><img src="3point.jpeg" alt="3 Point test"></div>
+        <div class="gallery-item hidden-swoosh"><img src="images/Juan.jpg" alt="Headshot"></div>
+        <div class="gallery-item hidden-swoosh"><img src="images/launchti6al4v10gs.png" alt="Sat Frame"></div>
+        <div class="gallery-item hidden-swoosh"><img src="images/aps.jpg" alt="Internship Picture"></div>
+        <div class="gallery-item hidden-swoosh"><img src="images/3point.jpeg" alt="3 Point test"></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about hidden-swoosh">
         <div class="about-title">
             <h2>Who am I?</h2>
-            <img src="f1.jpeg" alt="F1 Engine" class="about-image" style="padding-bottom: 80px;">
+            <img src="images/f1.jpeg" alt="F1 Engine" class="about-image" style="padding-bottom: 80px;">
         </div>
-        <div class="about-content">
-            <br><br><br><br><br>
+        <div class="about-content" style="padding-top: 120px;">
             <p>I am a dedicated engineering student specializing in aerospace and mechanical systems. Alongside my senior-level coursework, I actively utilize industry-standard software and tools to build and troubleshoot complex systems.</p>
             <br>
             <p>Throughout my education I have participated in several projects to gain experience and improve digital infrastructure and have traveled across the country to better understand the needs of the industry. When I am not actively working on a project, I am learning about new subjects or building new skills.</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services hidden-swoosh">
         <div class="services-header">
             <h2>What do I do?</h2>
         </div>
@@ -88,7 +82,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-text">
             <h2>Contact Me</h2>
@@ -99,7 +92,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
@@ -109,11 +101,11 @@
                 <p>(915) 270-4645 <br>juanpablo001@live.com<br>El Paso, TX</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/jp0ram/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-   		        <i class="fa-brands fa-linkedin-in"></i>
-		    </a>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
                     <a href="https://github.com/jp0ram" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fa-brands fa-github"></i>
-		    </a>
+                    </a>
                 </div>
             </div>
             <div class="footer-links">
@@ -124,7 +116,21 @@
                 </ul>
             </div>
         </div>
-     </footer>
+    </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show-swoosh');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            const hiddenElements = document.querySelectorAll('.hidden-swoosh');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
